@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  mon_start: 2018-03-31 20:55:42
+  tues_start: 2018-03-31 20:55:42
+  wed_start: 2018-03-31 20:55:42
+  thurs_start: 2018-03-31 20:55:42
+  fri_start: 2018-03-31 20:55:42
+  sat_start: 2018-03-31 20:55:42
+  mon_end: 2018-03-31 20:55:42
+  tues_end: 2018-03-31 20:55:42
+  wed_end: 2018-03-31 20:55:42
+  thurs_end: 2018-03-31 20:55:42
+  fri_end: 2018-03-31 20:55:42
+  sat_end: 2018-03-31 20:55:42
+  course: one
+
+two:
+  mon_start: 2018-03-31 20:55:42
+  tues_start: 2018-03-31 20:55:42
+  wed_start: 2018-03-31 20:55:42
+  thurs_start: 2018-03-31 20:55:42
+  fri_start: 2018-03-31 20:55:42
+  sat_start: 2018-03-31 20:55:42
+  mon_end: 2018-03-31 20:55:42
+  tues_end: 2018-03-31 20:55:42
+  wed_end: 2018-03-31 20:55:42
+  thurs_end: 2018-03-31 20:55:42
+  fri_end: 2018-03-31 20:55:42
+  sat_end: 2018-03-31 20:55:42
+  course: two
