@@ -1,4 +1,4 @@
-Simply run `rake db:migrate`, `rake db:seed`, and `rails s`.
+Simply run `bundle install`, `rake db:migrate`, `rake db:seed`, and `rails s`.
 
 This is a complex api that models a class registration system for a university.
 
