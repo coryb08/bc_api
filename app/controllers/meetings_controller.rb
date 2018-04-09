@@ -7,7 +7,7 @@ class MeetingsController < ApplicationController
   end
 
   def create
-    new_params = params.delete_if{|k| k=="action" || k=="controller"}
+    new_params = params.delete_if{|k| k=="action" || k=="controller" || k=="meeting"}
 
     @meeting = Meeting.new(new_params)
 

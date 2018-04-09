@@ -35,8 +35,11 @@ class NotificationsController < ApplicationController
     )
 
     if @notification.save
-
-      render json: @notification
+      if params[:status] == "approved"
+        redirect_to new_schedule_path(user_id: params[:user_id], course_id: params[:course_id])
+      else
+        render json: @notification
+      end
     else
       render json: {errors: @notification.errors.full_messages}
     end

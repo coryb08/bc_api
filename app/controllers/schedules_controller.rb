@@ -1,16 +1,28 @@
 class SchedulesController < ApplicationController
 
   def index
-    @registrations = Registration.where({student_id: params[:student_id], status: "approved"})
-    @schedules = @registrations.map do |reg|
-      Meeting.where(course_id: reg[:course_id])
+    schedule = {}
+    params_to_scrub = ["id", "mon_end", "course_id"]
+    if !User.find(params[:user_id]).is_professor
+      student_id = Student.where(:user_id => params[:user_id])
+      registrations = Registration.where({student_id: student_id, status: "approved"})
+      registrations.map do |ele|
+        schedule[Course.find(ele[:course_id])[:name]] = Meeting.where(course_id: ele[:course_id]).to_a.map!{|ele| ele.as_json.except(*params_to_scrub)}
+      end
+    else
+      professor_id = Professor.where(:user_id => params[:user_id])
+      courses = Course.where({professor_id: professor_id})
+      courses.map do |course|
+        schedule[course[:name]] = Meeting.where(course_id: course[:id]).to_a.map!{|ele| ele.as_json.except(*params_to_scrub)}
+      end
     end
-    puts("sched ", @schedules)
+    render json: (schedule)
   end
 
-  def create
-    @schedule = Schedule.new(:course_id => params[:course_id], :student_id => params[:student_id])
+  def new
 
+
+    @schedule = Schedule.new(:course_id => params[:course_id], :user_id => params[:user_id])
     if @schedule.save
       render json: @schedule
     else
