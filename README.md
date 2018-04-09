@@ -8,4 +8,6 @@ Only professors can approve these registrations. Approvals or denials will add a
 
 Students cannot register for courses whose meeting times overlap.
 
-Approval by the professor will add the course to the students schedule.
+Approval by the professor will add the course to the student's schedule.
+
+Working list of endpoints can be found [here](https://www.dropbox.com/s/dzxewnlrwa8ack5/endpoints_bc.pdf?dl=0)
